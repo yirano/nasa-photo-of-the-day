@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PageTitle from './Components/PageTitle/PageTitle';
 import MediaContainer from './Components/MediaContainer/MediaContainer';
+
 import "./App.css";
 
 function App() {
+
+
   return (
     <div className="App">
       <PageTitle />
