@@ -5,7 +5,7 @@ import ImageCaption from './ImageCaption';
 
 export default function ImageContainer() {
 	return (
-		<div class="imageContainer">
+		<div className="imageContainer">
 			<ImageTitle />
 			<Image />
 			<ImageCaption />
