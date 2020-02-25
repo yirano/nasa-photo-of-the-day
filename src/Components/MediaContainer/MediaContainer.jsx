@@ -4,6 +4,7 @@ import MediaTitle from './MediaTitle';
 import ImageContainer from '../ImageContainer/ImageContainer'
 import VideoContainer from '../VideoContainer/VideoContainer'
 import MediaCaption from './MediaCaption';
+import Date from '../Date/Date';
 
 export default function MediaContainer() {
   const [mediaType, setMediaType] = useState('');
@@ -11,17 +12,11 @@ export default function MediaContainer() {
   const [mediaTitle, setMediaTitle] = useState('');
   const [mediaCaption, setMediaCaption] = useState('');
   const [date, setDate] = useState('')
-  console.log("connected");
 
   const handleSubmit = e => {
     e.preventDefault();
     setDate(document.querySelector('#date').value);
   }
-
-  useEffect((handleSubmit) => {
-    console.log(date);
-    console.log("inside effect hook");
-  }, [date])
 
   useEffect(() => {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=WysXP93cjIhjta8of3yl1NSC8hX3rUD3qaQMMadd&date=${date}`)
@@ -33,13 +28,10 @@ export default function MediaContainer() {
         console.log(result);
       })
   }, [date]);
+
   return (
     <div className="mediaContainer">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="date">Date: </label>
-        <input type="date" id="date" name="date" />
-        <input type="submit" />
-      </form>
+      <Date handleSubmit={handleSubmit} />
       <MediaTitle title={mediaTitle} />
       {mediaType === 'video' ? <VideoContainer video={media} /> : <ImageContainer image={media} />}
       <MediaCaption caption={mediaCaption} />
