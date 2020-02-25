@@ -1,14 +1,11 @@
 import React from 'react';
-import ImageTitle from './ImageTitle';
 import Image from './Image';
-import ImageCaption from './ImageCaption';
 
-export default function ImageContainer() {
+export default function ImageContainer(props) {
+  const { image } = props;
 	return (
 		<div className="imageContainer">
-			<ImageTitle />
-			<Image />
-			<ImageCaption />
+      <img src={image.src} alt={image.desc}/>
 		</div>
 	);
 }
