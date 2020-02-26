@@ -11,7 +11,7 @@ export default function MediaContainer() {
   const [media, setMedia] = useState('')
   const [mediaTitle, setMediaTitle] = useState('');
   const [mediaCaption, setMediaCaption] = useState('');
-  const [date, setDate] = useState('')
+  const [date, setDate] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();

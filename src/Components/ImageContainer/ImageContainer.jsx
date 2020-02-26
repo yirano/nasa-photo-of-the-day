@@ -1,10 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
-export default function ImageContainer(props) {
+const ImageWrapper = styled.div`
+  width: 100%;
+`;
+
+const ImageSize = styled.img`
+  width: 100%;
+`;
+
+function ImageContainer(props) {
   const { image } = props;
   return (
-    <div className="imageContainer">
-      <img src={image.url} alt={image.desc} />
-    </div>
+    <ImageWrapper>
+      <ImageSize src={image.url} alt={image.desc} />
+    </ImageWrapper>
   );
 }
+
+export default ImageContainer;
