@@ -1,12 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
-import PageTitle from './Components/PageTitle/PageTitle';
 import MediaContainer from './Components/MediaContainer/MediaContainer';
 import "./App.css";
+import PageTitle from "./Components/PageTitle/PageTitle";
 
 const WrapperDiv = styled.div`
-  margin: 20px 170px;
+  margin: auto;
   padding: 40px;
+  max-width: 1024px;
   text-align: center;
   background-color: #fbfbfb;
 `;

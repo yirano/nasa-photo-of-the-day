@@ -3,7 +3,9 @@ import styled from 'styled-components';
 
 const Caption = styled.p`
   text-align: left;
-  line-height: 1.5em;
+  font-size: 18px;
+  line-height: 1.8em;
+  padding: 20px;
 `;
 
 export default function MediaCaption(props) {
