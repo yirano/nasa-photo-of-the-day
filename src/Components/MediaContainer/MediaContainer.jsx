@@ -7,10 +7,7 @@ import MediaCaption from './MediaCaption';
 import Date from '../Date/Date';
 
 export default function MediaContainer() {
-  const [mediaType, setMediaType] = useState('');
   const [media, setMedia] = useState('')
-  const [mediaTitle, setMediaTitle] = useState('');
-  const [mediaCaption, setMediaCaption] = useState('');
   const [date, setDate] = useState('');
 
   const handleSubmit = e => {
@@ -22,19 +19,15 @@ export default function MediaContainer() {
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=WysXP93cjIhjta8of3yl1NSC8hX3rUD3qaQMMadd&date=${date}`)
       .then(result => {
         setMedia(result.data);
-        setMediaType(result.data.media_type);
-        setMediaTitle(result.data.title);
-        setMediaCaption(result.data.explanation);
-        console.log(result);
       })
   }, [date]);
 
   return (
     <div className="mediaContainer">
       <Date handleSubmit={handleSubmit} />
-      <MediaTitle title={mediaTitle} />
-      {mediaType === 'video' ? <VideoContainer video={media} /> : <ImageContainer image={media} />}
-      <MediaCaption caption={mediaCaption} />
+      <MediaTitle title={media.title} />
+      {media.media_type === 'video' ? <VideoContainer video={media} /> : <ImageContainer image={media} />}
+      <MediaCaption caption={media.explanation} />
     </div>
   )
 }
