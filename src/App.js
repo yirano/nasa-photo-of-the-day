@@ -1,14 +1,23 @@
 import React from "react";
+import styled from 'styled-components';
+import MediaContainer from './Components/MediaContainer/MediaContainer';
 import "./App.css";
+import PageTitle from "./Components/PageTitle/PageTitle";
+
+const WrapperDiv = styled.div`
+  margin: auto;
+  padding: 40px;
+  max-width: 1024px;
+  text-align: center;
+  background-color: #fbfbfb;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
-    </div>
+    <WrapperDiv>
+      <PageTitle />
+      <MediaContainer />
+    </WrapperDiv>
   );
 }
 
