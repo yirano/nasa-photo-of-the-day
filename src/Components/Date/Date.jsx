@@ -1,4 +1,12 @@
-import React from 'react';
+import React from 'react'
+
+//  ! THIS IS IMPORTANT
+// ? What is this? 
+// * This is what this does
+
+/* -------------------------------------------------------------------------- */
+/*                           This part renders this                           */
+/* -------------------------------------------------------------------------- */
 
 export default function Date(props) {
   return (
